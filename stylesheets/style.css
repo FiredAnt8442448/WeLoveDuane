@@ -1,0 +1,128 @@
+h1 {
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightblue;
+    z-index: 2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.dropdown-container {
+    position: relative;
+    z-index: 1; /* This positions the dropdown container below the navbar */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 35px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content.show {
+    display: block;
+    animation: slide-down 0.5s forwards;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.dropbtn {
+    background-color: lightblue;
+    color: black;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropbtn:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    font-size: 24px; /* Increase this value to make the hamburger icon bigger */
+    padding: 16px; /* Move the padding from .dropbtn to here */
+}
+
+#map { height: 100vh; }
+
+#mapImage {
+    width: 100%;
+    height: auto;
+    max-height: 100vh; /* This will prevent the image from becoming taller than the viewport */
+}
+
+.load-data-button {
+    /* Other styles... */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYSeYAdc5c_DoErgYgDLOJs8nCpX1y5Zc4FwVx0mY-Eg&s');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+.save-data-button {
+    /* Other styles... */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2344/2344313.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+.clear-data-button {
+    /* Other styles... */
+    background-image: url('https://cdn-icons-png.freepik.com/256/484/484611.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+.data-div {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* This should be higher than the z-index of #map */
+}
+
+.right-align-button {
+    float: right;
+}
